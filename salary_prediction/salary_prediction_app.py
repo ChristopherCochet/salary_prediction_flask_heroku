@@ -1,0 +1,1 @@
+from salary_prediction import salary_prediction_app
