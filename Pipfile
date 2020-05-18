@@ -4,7 +4,22 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-
+click="*"
+Flask="*"
+gunicorn="*"
+itsdangerous="*"
+Jinja2="*"
+MarkupSafe="*"
+Werkzeug="*"
+joblib="*"
+numpy="*"
+pandas="*"
+python-dateutil="*"
+pytz="*"
+six="*"
+certifi="*"
+chardet="*"
+urllib3="*"
 
 [packages]
 click="*"
@@ -15,13 +30,14 @@ Jinja2="*"
 MarkupSafe="*"
 Werkzeug="*"
 joblib="*"
-MarkupSafe="*"
 numpy="*"
 pandas="*"
 python-dateutil="*"
 pytz="*"
 six="*"
-
+certifi="*"
+chardet="*"
+urllib3="*"
 
 [requires]
 python_version = "python-3.7.6"
