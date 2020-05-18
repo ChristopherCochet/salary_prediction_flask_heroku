@@ -20,6 +20,7 @@ six="*"
 certifi="*"
 chardet="*"
 urllib3="*"
+requests="*"
 
 [packages]
 click="*"
@@ -38,6 +39,7 @@ six="*"
 certifi="*"
 chardet="*"
 urllib3="*"
+requests = "*"
 
 [requires]
 python_version = "python-3.7.6"
