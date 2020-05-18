@@ -10,7 +10,7 @@ from flask import Flask, jsonify, request
 ip_address = socket.gethostbyname(socket.gethostname())
 
 trained_model = joblib.load("salary_prediction/model.pkl")
-var_means = joblib.load("columns_mean.pkl")
+var_means = joblib.load("salary_prediction/columns_mean.pkl")
 
 @salary_prediction_app.route('/')
 @salary_prediction_app.route('/index')
