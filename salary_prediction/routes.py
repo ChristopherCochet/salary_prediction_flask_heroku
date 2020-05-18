@@ -3,14 +3,15 @@ import socket
 import json
 import joblib
 import requests
+import pickle
 import pandas as pd
 import numpy as np
 from flask import Flask, jsonify, request
 
 ip_address = socket.gethostbyname(socket.gethostname())
 
-trained_model = joblib.load("model.pkl")
-var_means = pickle.load(open("columns_mean.pkl", "rb" ) )
+trained_model = joblib.load("./model.pkl")
+var_means = pickle.load(open("./columns_mean.pkl", "rb" ) )
 
 @salary_prediction_app.route('/')
 @salary_prediction_app.route('/index')
