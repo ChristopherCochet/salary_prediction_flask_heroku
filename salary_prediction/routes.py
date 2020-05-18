@@ -17,7 +17,7 @@ var_means = joblib.load("salary_prediction/columns_mean.pkl")
 def index():
     return ("<H1>Hello, World!</H1> <H2>API IP Address: {} </H2>".format(ip_address))
 
-@app.route('/predict', methods=['POST'])
+@salary_prediction_app.route('/predict', methods=['POST'])
 def predict():
   data = request.get_json()
   df_test = pd.DataFrame(data, index=[0])
