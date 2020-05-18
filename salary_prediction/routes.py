@@ -3,7 +3,6 @@ import socket
 import json
 import joblib
 import requests
-import pickle
 import pandas as pd
 import numpy as np
 from flask import Flask, jsonify, request
@@ -11,7 +10,7 @@ from flask import Flask, jsonify, request
 ip_address = socket.gethostbyname(socket.gethostname())
 
 trained_model = joblib.load("salary_prediction/model.pkl")
-var_means = pickle.load(open("salary_prediction/model.pkl", "rb" ) )
+var_means = joblib.load("columns_mean.pkl")
 
 @salary_prediction_app.route('/')
 @salary_prediction_app.route('/index')
