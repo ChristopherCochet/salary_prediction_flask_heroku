@@ -48,8 +48,9 @@ def index():
 
 @salary_prediction_app.route('/predict', methods=['POST'])
 def predict():
-  data_unseen = request.get_json(force = True)
-  df_unseen = pd.DataFrame([data_unseen], columns = salary_col)
+  data_unseen = request.get_json()
+  logging.debug(data_unseen)
+  df_unseen = pd.DataFrame(data_unseen, columns = salary_col)
   logging.debug(df_unseen)
   df_unseen = one_hot_encode_feature_df(df_unseen, cat_vars=categorical_vars, num_vars=numeric_vars, ohe = salary_prediction_ohe)
   logging.debug(df_unseen)
