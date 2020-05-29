@@ -192,6 +192,7 @@ Success, we have successfully tested locally the FLask API and predictions serve
   * [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python)
   * [Heroku CLI installed on your dev machine](https://devcenter.heroku.com/articles/heroku-cli)
   * Heroku account and loggin created
+  * Git installed
 
  <kbd> <img src="images/heroku-logo.png?raw=true"> </kbd>
   
@@ -207,10 +208,21 @@ Success, we have successfully tested locally the FLask API and predictions serve
   (venv) $ heroku login
   ```
 
-  2 - Log in your Heroku acocunt with the CLI
+  2 - Go to the salary prediction directory and create an app
   ```
-  (venv) $ heroku login
+  (venv) $ heroku create
   ```
+  <kbd> <img src="images/heroku-create.PNG?raw=true"> </kbd>
+
+  3 - Add the current salary prediction opython code, flask app and seririalized model files to the current local git repo
+  ```
+  (venv) $ git init 
+  (venv) $ git add .
+  (venv) $ git commit -am "initial commit"
+  (venv) $ git push heroku master
+  ```
+
+  <kbd> <img src="images/heroku-create.PNG?raw=true"> </kbd>
 
 A barebones Django app, which can easily be deployed to Heroku.
 
