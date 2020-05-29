@@ -6,10 +6,13 @@ import logging
 import requests
 import pandas as pd
 import numpy as np
+import warnings
 
 from salary_prediction import salary_prediction_app
 #from sklearn.ensemble import GradientBoostingRegressor
 from flask import Flask, jsonify, request
+
+warnings.filterwarnings("ignore")
 
 logging.basicConfig(level=logging.DEBUG)
 
