@@ -195,6 +195,8 @@ Success, we have successfully tested locally the FLask API and predictions serve
 
 # 4. Create a Heroku build environment, Deploy and Test the Heroku Flask API to the Cloud
 
+ <kbd> <img src="images/Heroku-Rest-Api.png?raw=true"> </kbd>
+
 ## Pre-requisite
   * [Heroku](https://www.heroku.com/what)
   * [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python)
