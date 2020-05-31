@@ -54,10 +54,10 @@ Here are some good Heroku references to review for this projects:
 # 2. Create a Python Flask app to expose the regression model through a web API
 
   ## Pre-requisite
-  * Flask - we will use this framework to build a Web API used to serve salary predictions from the regression model trained (https://flask.palletsprojects.com/en/1.1.x/)
-  * JSON - we will use JSON to serialize, transmit and receive data to end from our mdeol over the web (https://en.wikipedia.org/wiki/JSON)
-  * JSON Python Module (https://www.youtube.com/watch?v=pTT7HMqDnJw)
-  * RESTful API (https://www.youtube.com/watch?v=7YcW25PHnAA)
+  * Flask - [we will use this framework to build a Web API used to serve salary predictions from the regression model traine](https://flask.palletsprojects.com/en/1.1.x/)
+  * JSON - [we will use JSON to serialize, transmit and receive data to end from our mdeol over the web](https://en.wikipedia.org/wiki/JSON)
+  * [JSON Python Module](https://www.youtube.com/watch?v=pTT7HMqDnJw)
+  * [RESTful API](https://www.youtube.com/watch?v=7YcW25PHnAA)
 
   ## What is Flask ?
 
@@ -108,7 +108,7 @@ Here are some good Heroku references to review for this projects:
 # 3. Test the Flask App and API locally
 
 ## Pre-requisite
-  * Git clone the following repo containing the python code and environement file
+  * Git clone the following repo containing the python code and environment file
 
   1 - Activate your python environment and shell
   ```
