@@ -2,7 +2,7 @@
 
 **Project description:** This is a guided project in which we describe concisely how to deploy a regression model (salary prediction) through a cloud API using a flask app and heroku.
 
-<kbd> <img src="images/model-Flask-Heroku.PNG?raw=true"/> </kbd>
+<kbd> <img src="images/Model-Flask-Heroku.PNG?raw=true"/> </kbd>
 
 Here are some good Heroku references to review for this projects:
 * https://devcenter.heroku.com/categories/heroku-architecture
