@@ -26,7 +26,7 @@ Here are some good Heroku references to review for this projects:
   ## Pre-requisite
   * Python and Scikit-learn environment installed
   * A salary dataset
-  * [The salary prediction regression modeling code](Salary Prediction - Regression.ipynb)
+  * [The salary prediction regression modeling code](https://github.com/ChristopherCochet/salary_prediction_flask_heroku/blob/master/model_training/Salary%20Prediction%20-%20Regression.ipynb)
 
   ## Train and save the salary prediction regression model and the one hot encoder
   * The salary dataset contains salary information based on job descriptions such as level, experience, location, education and other features.  
@@ -34,7 +34,6 @@ Here are some good Heroku references to review for this projects:
   * Pre-processing steps are used including one hot encoding the categorical features - this ohe is saved in pickel format.
   * Different regression models are tested and the best performing model (performance metric is chosen MSE), a Gradient Boosting model, is saved in a pkl format using serialization. 
   
-
   Saving the preprocessing One Hot Encoder
   
   <kbd> <img src="images/preprocessing_ohe_pickle.PNG?raw=true"> </kbd>
