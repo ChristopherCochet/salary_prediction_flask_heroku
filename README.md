@@ -2,14 +2,22 @@
 
 **Project description:** This is a guided project in which we describe concisely how to deploy a regression model (salary prediction) through a cloud API using a flask app and heroku.
 
-<kbd> <img src="images/power bi.gif?raw=true"/> </kbd>
+<kbd> <img src="images/model-Flask-Heroku.PNG?raw=true"/> </kbd>
 
-The steps we will follow are:
+Here are some good Heroku references to review for this projects:
+* https://devcenter.heroku.com/categories/heroku-architecture
+* https://devcenter.heroku.com/articles/heroku-cli
+* https://devcenter.heroku.com/articles/using-the-cli
+* https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+* https://www.youtube.com/watch?v=skc-ZEU9kO8
+* https://www.kdnuggets.com/2020/05/build-deploy-machine-learning-web-app.html
+
+
+### Tracking our progress
   - [ ] Train a salary prediction regression model and save the model and preprocessing pipeline 
   - [ ] Create a Python Flask app to expose the regression model through a web API
   - [ ] Test the Flask App locally
-  - [ ] Create a Heroku build environment
-  - [ ] Deploy and Test the Heroku and Flask API to the Cloud
+  - [ ] Create a Heroku build environment, Deploy and Test the Heroku Flask API to the Cloud
 
 ---
 
@@ -18,7 +26,7 @@ The steps we will follow are:
   ## Pre-requisite
   * Python and Scikit-learn environment installed
   * A salary dataset
-  * The salary prediction regression modeling code (https://github.com/pthom/northwind_psql/blob/master/northwind.sql)
+  * [The salary prediction regression modeling code](Salary Prediction - Regression.ipynb)
 
   ## Train and save the salary prediction regression model and the one hot encoder
   * The salary dataset contains salary information based on job descriptions such as level, experience, location, education and other features.  
@@ -26,21 +34,22 @@ The steps we will follow are:
   * Pre-processing steps are used including one hot encoding the categorical features - this ohe is saved in pickel format.
   * Different regression models are tested and the best performing model (performance metric is chosen MSE), a Gradient Boosting model, is saved in a pkl format using serialization. 
   
-  [Salary Prection modeling](https://devcenter.heroku.com/articles/heroku-cli)
 
   Saving the preprocessing One Hot Encoder
+  
   <kbd> <img src="images/preprocessing_ohe_pickle.PNG?raw=true"> </kbd>
 
   Saving the Gradient Boosting regression model
-  <kbd> <img src="images/preprocessing_ohe_pickle.PNG?raw=true"> </kbd>
+  
+  <kbd> <img src="images/save_model_pickle.PNG?raw=true"> </kbd>
 
   Both the saved ohe and the regression model pickle files will be loaded by the Flask API to process incoming data and serve predictions. 
 
+### Tracking our progress
   - [X] Train a salary prediction regression model and save the model and preprocessing pipeline 
   - [ ] Create a Python Flask app to expose the regression model through a web API
   - [ ] Test the Flask App locally
-  - [ ] Create a Heroku build environment
-  - [ ] Deploy and Test the Heroku and Flask API to the Cloud
+  - [ ] Create a Heroku build environment, Deploy and Test the Heroku Flask API to the Cloud
 
 
 # 2. Create a Python Flask app to expose the regression model through a web API
@@ -89,18 +98,18 @@ The steps we will follow are:
    
     ```
 
+### Tracking our progress
   - [X] Train a salary prediction regression model and save the model and preprocessing pipeline 
   - [X] Create a Python Flask app to expose the regression model through a web API
   - [ ] Test the Flask App locally
-  - [ ] Create a Heroku build environment
-  - [ ] Deploy and Test the Heroku and Flask API to the Cloud
+  - [ ] Create a Heroku build environment, Deploy and Test the Heroku Flask API to the Cloud
  
 # 3. Test the Flask App and API locally
 
 ## Pre-requisite
   * Git clone the following repo containing the python code and environement file
 
-  1 - Activate your python environment
+  1 - Activate your python environment and shell
   ```
   (venv) $ pipenv shell
   ```
@@ -110,7 +119,7 @@ The steps we will follow are:
   (venv) $ set FLASK_APP=set FLASK_APP=salary_prediction/salary_prediction_app.py
   ```
 
-  3 - Launch the flask app locally
+  3 - Launch the flask app locally (localhost, port 5000 by default)
   ```
   (venv) $ flask run
   ```
@@ -178,30 +187,29 @@ The steps we will follow are:
 ## Test Results
 Success, we have successfully tested locally the FLask API and predictions served by our model 
 
+### Tracking our progress
   - [X] Train a salary prediction regression model and save the model and preprocessing pipeline 
   - [X] Create a Python Flask app to expose the regression model through a web API
   - [X] Test the Flask App locally
-  - [ ] Create a Heroku build environment
-  - [ ] Deploy and Test the Heroku and Flask API to the Cloud
+  - [ ] Create a Heroku build environment, Deploy and Test the Heroku Flask API to the Cloud
 
 
-# 4. Create a Heroku build environment
+# 4. Create a Heroku build environment, Deploy and Test the Heroku Flask API to the Cloud
 
 ## Pre-requisite
   * [Heroku](https://www.heroku.com/what)
   * [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python)
   * [Heroku CLI installed on your dev machine](https://devcenter.heroku.com/articles/heroku-cli)
+  * [Heroku CLI app deployment with git](https://devcenter.heroku.com/articles/git)
   * Heroku account and loggin created
-  * Git installed
-
- <kbd> <img src="images/heroku-logo.png?raw=true"> </kbd>
-  
+  * Git installed as the Heroku platform uses Git as the primary means for deploying applications  
 
 ## What is Heroku ?
 
   > Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps. 
   > Heroku sits on top of AWS and is specifically designed to make developers lives easier as developers do not have to worry about cloud infrastructure and can focus on the application they are building and want to depoy and scale.
 
+ <kbd> <img src="images/heroku-logo.png?raw=true"> </kbd>
 
   1 - Log in your Heroku acocunt with the CLI
   ```
@@ -212,7 +220,8 @@ Success, we have successfully tested locally the FLask API and predictions serve
   ```
   (venv) $ heroku create
   ```
-  <kbd> <img src="images/heroku-create.PNG?raw=true"> </kbd>
+
+ <kbd> <img src="images/heroku-create.PNG?raw=true"> </kbd>
 
   3 - Add the current salary prediction opython code, flask app and seririalized model files to the current local git repo
   ```
@@ -221,49 +230,50 @@ Success, we have successfully tested locally the FLask API and predictions serve
   (venv) $ git commit -am "initial commit"
   (venv) $ git push heroku master
   ```
+ 
+ <kbd> <img src="images/git-add.PNG?raw=true"> </kbd>
+  
+  3 - Add the current salary prediction opython code, flask app and seririalized model files to the current local git repo
+  ```
+  (venv) $ git push heroku master
+  ```
 
-  <kbd> <img src="images/heroku-create.PNG?raw=true"> </kbd>
+  4 - Check the deployed heroku app status in the heroku online dashboard UI
 
-A barebones Django app, which can easily be deployed to Heroku.
+  <kbd> <img src="images/heroku-app-dashboard.PNG?raw=true"> </kbd>
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+  5 - Test the Flask HTML API using a web browser and the Heroku app hostname provided  
 
-## Running Locally
+  <kbd> <img src="images/flask_heroku_test.PNG?raw=true"> </kbd>
 
-Make sure you have Python 3.6 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
+  6 - Test the Flask '/predict' endpoint by using datapoints from our salary prediction test set and the Heroku app hostname
 
-```sh
-$ git clone https://github.com/heroku/python-getting-started.git
-$ cd python-getting-started
-
-$ python3 -m venv getting-started
-$ pip install -r requirements.txt
-
-$ createdb python_getting_started
-
-$ python manage.py migrate
-$ python manage.py collectstatic
-
-$ heroku local
+```
+  headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+  # send request to the local flask salary predcition end point
+  r = r = requests.post(f"https://shrouded-spire-27908.herokuapp.com/predict", data=j_data_list, headers=headers)
+  
+  # print salary predctions returned
+  print(r.text)
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-
-$ heroku run python manage.py migrate
-$ heroku open
 ```
-or
+# Salary predictions returned by the flask API for two job descriptions 
+"[150.71643399  96.42931186]"
+```
+6 - Check the Heroku app logs for any errors
+We can see in the logs the input JSON job records received and succesfully processed by the /predict flask Heroku endpoint
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+ ```
+  (venv) $ heroku logs
+  ```
+  <kbd> <img src="images/heroku-logs.PNG?raw=true"> </kbd>
 
-## Documentation
+## Test Results
+Success, we have successfully tested the build and deployment of the Flask API to the cloud with Heroku, predictions served by our model match the ones tested locally 
 
-For more information about using Python on Heroku, see these Dev Center articles:
-
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)
+### Tracking our progress
+  - [X] Train a salary prediction regression model and save the model and preprocessing pipeline 
+  - [X] Create a Python Flask app to expose the regression model through a web API
+  - [X] Test the Flask App locally
+  - [X] Create a Heroku build environment, Deploy and Test the Heroku Flask API to the Cloud
